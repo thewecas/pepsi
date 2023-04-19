@@ -1,0 +1,351 @@
+@import "./setup";
+
+@import "./nav";
+
+/*zero pepsi */
+.zero-pepsi {
+  min-height: 75svh;
+
+  background-color: black;
+  padding: 2em;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    color: wheat;
+    background: url("../assets/images/new-improved-taste.svg");
+    background-size: fit;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 8%;
+    right: 12%;
+  }
+  .can {
+    width: 60%;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+  }
+  .text {
+    font-size: 3em;
+    color: white;
+    font-family: $Bubblegum;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 13%;
+    top: 18%;
+    z-index: 3;
+    em {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      &:nth-child(1) {
+        font-size: 3em;
+      }
+      &:nth-child(3) {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+/* zero pepsi ends */
+
+/* three-cans*/
+.three-pepsi {
+  min-height: 80svh;
+  background: linear-gradient(
+    170deg,
+    #00085b,
+    rgb(4, 4, 218),
+    rgb(1, 1, 80) 60%,
+    black 50%
+  );
+  position: relative;
+  z-index: 22;
+  .can {
+    @include position-center();
+    left: 30%;
+    width: 50%;
+    filter: drop-shadow(2px 2px 10px rgb(0, 4, 48));
+  }
+  .text {
+    font-size: 3em;
+    color: white;
+    font-family: $Bubblegum;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 5%;
+    bottom: 50%;
+    transform: translateY(50%);
+    z-index: 3;
+    em {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      &:nth-child(1) {
+        font-size: 1.5em;
+      }
+      &:nth-child(3) {
+        font-size: 1.2em;
+      }
+    }
+  }
+  .btn {
+    // position: absolute;
+    color: white;
+    font-family: $Bubblegum;
+    @include btn();
+    padding: 0.4em 0.8em;
+    background-color: rgba(0, 0, 255, 0);
+    text-align: center;
+    width: fit-content;
+    font-size: 0.4em;
+    margin-top: 0.5em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+/* three-cans ends*/
+
+/* blue-cans */
+.blue-pepsi {
+  background-color: black;
+  background: linear-gradient(
+    350deg,
+    #0713a6,
+    rgb(60, 60, 185),
+    rgb(1, 1, 126) 70%,
+    black 70%
+  );
+  padding: 4em;
+  min-height: calc(100svh - 12em);
+  overflow: hidden;
+  position: relative;
+  z-index: 33;
+  .can {
+    width: 50%;
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  .text {
+    color: white;
+    font-size: 7em;
+    font-family: $Bubblegum;
+    text-transform: uppercase;
+    position: absolute;
+    filter: drop-shadow(5px 5px 5px black);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    z-index: 2;
+  }
+}
+/*blue-cans ends*/
+
+/*mobile styling */
+
+@media screen and (max-width: 768px) {
+  /*zero pepsi*/
+
+  .zero-pepsi {
+    height: 80svh;
+    position: relative;
+    &::before {
+      left: 60%;
+      top: 25%;
+      width: 150px;
+      background-size: 100%;
+    }
+    .can {
+      width: 180%;
+      left: -40%;
+      bottom: 0%;
+    }
+    .text {
+      top: 5%;
+      left: 25%;
+      em {
+        &:nth-child(1) {
+          font-size: 1.3em;
+        }
+        &:nth-child(2) {
+          font-size: 0.5em;
+        }
+        &:nth-child(3) {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+  /*zero pepsi ends*/
+
+  /* three-pepsi */
+  .three-pepsi {
+    position: relative;
+    z-index: 22;
+    min-height: 60svh;
+    background: linear-gradient(
+      212deg,
+      #00085b,
+      rgb(4, 4, 218),
+      rgb(1, 1, 80) 60%,
+      black 40%
+    );
+    .can {
+      left: 50%;
+      top: 25%;
+      width: 80%;
+    }
+    .text {
+      left: 10%;
+      right: 10%;
+      bottom: 0%;
+      top: 0%;
+      em {
+        &:nth-child(1) {
+          font-size: 0.8em;
+        }
+        &:nth-child(2) {
+          font-size: 0.4em;
+        }
+        &:nth-child(3) {
+          font-size: 0.4em;
+        }
+      }
+    }
+  }
+  /* three-pepsi ends*/
+
+  /* blue pepsi*/
+
+  .blue-pepsi {
+    position: relative;
+    z-index: 33;
+    min-height: 80svh;
+    background: linear-gradient(
+      35deg,
+      #0713a6,
+      rgb(60, 60, 185),
+      rgb(1, 1, 126) 70%,
+      black 70%
+    );
+    .can {
+      width: 125%;
+      left: 50%;
+      bottom: 0%;
+      transform: translateX(-50%);
+    }
+
+    .text {
+      font-size: 4em;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: drop-shadow(2px 2px 5px black);
+    }
+  }
+  /*blue pepsi ends*/
+}
+
+/* animation */
+@keyframes open1 {
+  0% {
+    transform: none;
+  }
+
+  100% {
+    transform: rotate(45deg) translate(6px, 7px);
+  }
+}
+@keyframes open2 {
+  0% {
+    transform: none;
+  }
+
+  100% {
+    transform: translateX(40px);
+  }
+}
+@keyframes open3 {
+  0% {
+    transform: none;
+  }
+
+  100% {
+    transform: rotate(-45deg) translate(6px, -7px);
+  }
+}
+
+@keyframes close1 {
+  0% {
+    transform: rotate(45deg) translate(6px, 7px);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+@keyframes close2 {
+  0% {
+    transform: translateX(40px);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+@keyframes close3 {
+  0% {
+    transform: rotate(-45deg) translate(6px, -7px);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes slide_down {
+  0% {
+    transform: translateY(-120%);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes slide_up {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(-120%);
+  }
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade_out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
