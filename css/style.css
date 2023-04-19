@@ -31,6 +31,10 @@ body {
   background-position: 40% 50%;
   background-size: 300%;
   background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
 .nav .header {
   display: flex;
@@ -59,6 +63,10 @@ body {
 .nav .nav-links .btn {
   border: 2px solid white;
   border-radius: 1em;
+}
+
+body {
+  margin-top: 4em;
 }
 
 @media screen and (max-width: 768px) {
@@ -157,6 +165,9 @@ body {
   }
   .nav:has(.open_link) .header {
     padding-top: 2px;
+  }
+  body {
+    margin-top: 3em;
   }
 }
 /* nav ends */

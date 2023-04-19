@@ -7,6 +7,10 @@
   background-position: 40% 50%;
   background-size: 300%;
   background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
   .header {
     display: flex;
     justify-content: center;
@@ -34,6 +38,10 @@
       @include btn();
     }
   }
+}
+
+body {
+  margin-top: 4em;
 }
 
 @media screen and (max-width: 768px) {
@@ -136,6 +144,10 @@
       padding-top: 2px;
     }
     background-position: 60% 50%;
+  }
+
+  body {
+    margin-top: 3em;
   }
 }
 /* nav ends */
