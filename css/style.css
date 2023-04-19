@@ -170,6 +170,71 @@ body {
     margin-top: 3em;
   }
 }
+/* animation */
+@keyframes open1 {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: rotate(45deg) translate(6px, 7px);
+  }
+}
+@keyframes open2 {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+@keyframes open3 {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: rotate(-45deg) translate(6px, -7px);
+  }
+}
+@keyframes close1 {
+  0% {
+    transform: rotate(45deg) translate(6px, 7px);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes close2 {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes close3 {
+  0% {
+    transform: rotate(-45deg) translate(6px, -7px);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes slide_down {
+  0% {
+    transform: translateY(-120%);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes slide_up {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(-120%);
+  }
+}
 /* nav ends */
 /*zero pepsi */
 .zero-pepsi {
@@ -391,71 +456,6 @@ body {
     filter: drop-shadow(2px 2px 5px black);
   }
   /*blue pepsi ends*/
-}
-/* animation */
-@keyframes open1 {
-  0% {
-    transform: none;
-  }
-  100% {
-    transform: rotate(45deg) translate(6px, 7px);
-  }
-}
-@keyframes open2 {
-  0% {
-    transform: none;
-  }
-  100% {
-    transform: translateX(40px);
-  }
-}
-@keyframes open3 {
-  0% {
-    transform: none;
-  }
-  100% {
-    transform: rotate(-45deg) translate(6px, -7px);
-  }
-}
-@keyframes close1 {
-  0% {
-    transform: rotate(45deg) translate(6px, 7px);
-  }
-  100% {
-    transform: none;
-  }
-}
-@keyframes close2 {
-  0% {
-    transform: translateX(40px);
-  }
-  100% {
-    transform: none;
-  }
-}
-@keyframes close3 {
-  0% {
-    transform: rotate(-45deg) translate(6px, -7px);
-  }
-  100% {
-    transform: none;
-  }
-}
-@keyframes slide_down {
-  0% {
-    transform: translateY(-120%);
-  }
-  100% {
-    transform: none;
-  }
-}
-@keyframes slide_up {
-  0% {
-    transform: none;
-  }
-  100% {
-    transform: translateY(-120%);
-  }
 }
 @keyframes fade_in {
   0% {

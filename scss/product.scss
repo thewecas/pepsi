@@ -184,22 +184,43 @@
 }
 
 @media screen and (max-width: 768px) {
+  .cola-section {
+    .head {
+      font-size: 1.2em;
+      em {
+        font-size: 1.8em;
+      }
+    }
+  }
   .pepsi-detail {
     flex-direction: column-reverse;
-    row-gap: 2em;
-    height: 120vh;
+    justify-content: flex-end;
+    min-height: calc(100lvh - 3em);
+    gap: 2em;
     .can-container {
-      width: 100%;
-      //   padding-top: 5em;
-      .can-img {
-        width: 10%;
+      #can-image {
+        width: auto;
+        height: 250px;
       }
-      .info {
+    }
+    .info {
+      width: 80%;
+      height: 10%;
+
+      p {
+        padding: 0.5em 1.5em;
+        font-size: 0.8em;
+        &:nth-child(4) {
+          font-size: 1em;
+        }
+      }
+      #can-title {
+        font-size: 1.2em;
       }
     }
 
     #modal-close {
-      top: 12%;
+      top: 8%;
       right: 6%;
       font-size: 1.5em;
     }
