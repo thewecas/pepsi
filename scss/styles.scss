@@ -1,0 +1,26 @@
+@import "./setup";
+
+@import "./nav";
+
+@import "./footer";
+
+body {
+  color: white;
+  font-family: $Bubblegum;
+}
+
+/*zero styling */
+.zero-pepsi {
+  min-height: clamp(450px, 50svh, 60svh);
+  //   min-height: ;
+  width: 50%;
+  background-color: black;
+  padding: 2em;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .can {
+    width: 100%;
+  }
+}

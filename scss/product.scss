@@ -1,5 +1,6 @@
 @import "./setup";
 @import "./nav";
+@import "./footer";
 
 * {
   font-family: $Bubblegum;
@@ -151,7 +152,8 @@
     justify-content: center;
     #can-image {
       margin-inline: auto;
-      width: 50%;
+      height: 60%;
+      animation: slide_in_with_style 0.5s ease-in-out forwards;
     }
   }
 }
@@ -224,5 +226,17 @@
       right: 6%;
       font-size: 1.5em;
     }
+  }
+}
+
+@keyframes slide_in_with_style {
+  0% {
+    transform: translateX(50%) rotate(10deg);
+  }
+  60% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: none;
   }
 }

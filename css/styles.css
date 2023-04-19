@@ -304,198 +304,22 @@ footer .footer-extras .icons {
     cursor: pointer;
   }
 }
-* {
+body {
+  color: white;
   font-family: "Bubblegum Sans", cursive;
-  letter-spacing: 2px;
 }
 
-.cola-section .head {
-  font-size: 2em;
-  text-transform: uppercase;
-  display: block;
-  padding: 1em 1em 0em;
-  text-align: center;
-}
-.cola-section .head em {
-  font-size: 2.2em;
-}
-.cola-section .cans {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
+/*zero styling */
+.zero-pepsi {
+  min-height: clamp(450px, 50svh, 60svh);
+  width: 50%;
+  background-color: black;
   padding: 2em;
-  place-items: center;
-  gap: 2em;
-}
-.cola-section .cans .can-container {
-  padding: 2em 4em;
-  text-align: center;
-}
-.cola-section .cans .can-container .can-img {
-  width: 100%;
-  transition: all 0.3s ease-in-out;
-}
-.cola-section .cans .can-container .can-text {
-  margin-top: 1em;
-  line-height: 1.3em;
-  transition: all 0.3s ease-in-out;
-}
-
-.the1893 {
-  background: linear-gradient(45deg, rgb(21, 11, 0), rgb(44, 44, 44), rgb(4, 0, 19));
-}
-.the1893 .head {
-  color: #bba071;
-}
-.the1893 .head em {
-  color: #a16d14;
-}
-.the1893 .can-text {
-  color: #bba071;
-}
-
-.theFruits {
-  background: linear-gradient(30deg, rgb(0, 0, 0) 30%, rgb(105, 0, 0) 20%, rgb(196, 47, 47), rgb(105, 0, 0) 70%, rgb(0, 0, 0) 70%);
-}
-.theFruits .head {
-  color: rgb(241, 228, 228);
-}
-.theFruits .head em:nth-child(2) {
-  color: #decc2c;
-}
-.theFruits .head em:nth-child(3) {
-  color: #de2c2c;
-}
-.theFruits .cans {
-  justify-content: center;
-}
-.theFruits .cans .can-container {
-  padding: 1em 2em;
-}
-.theFruits .cans .can-container .can-img {
-  width: 80%;
-}
-.theFruits .cans .can-container .can-text {
-  color: white;
-}
-
-.pepsi-detail {
-  width: 100%;
-  padding-top: 100px;
-  min-height: calc(100svh - 3em);
-  background: linear-gradient(45deg, rgb(1, 1, 82), rgb(23, 38, 157), rgb(2, 2, 96));
-  position: fixed;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  overflow: hidden;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
-  display: none;
 }
-.pepsi-detail #modal-close {
-  position: absolute;
-  top: 18%;
-  right: 3%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
-  font-size: 2em;
-  font-weight: 700;
-}
-.pepsi-detail .info {
-  min-width: 30%;
-  background-color: rgb(255, 255, 255);
-  color: rgb(22, 22, 86);
-}
-.pepsi-detail .info p {
-  padding: 0.75rem 2rem;
-}
-.pepsi-detail .info p:nth-child(1) {
-  border-bottom: 2px solid rgb(2, 2, 99);
-}
-.pepsi-detail .info p:nth-child(3) {
-  border-bottom: 2px solid rgb(2, 2, 99);
-}
-.pepsi-detail .info p:nth-child(4) {
-  text-decoration: underline;
-  text-underline-offset: 10px;
-  font-size: 1.2em;
-}
-.pepsi-detail .info #can-title {
-  font-size: 2em;
-}
-.pepsi-detail .can-container {
-  width: 40%;
-  display: flex;
-  justify-content: center;
-}
-.pepsi-detail .can-container #can-image {
-  margin-inline: auto;
-  height: 60%;
-  animation: slide_in_with_style 0.5s ease-in-out forwards;
-}
-
-@media (hover) {
-  .cola-section .cans .can-container:hover {
-    cursor: pointer;
-  }
-  .cola-section .cans .can-container:hover .can-img {
-    rotate: 3deg;
-    scale: 1.1;
-    translate: 0px -30px;
-  }
-  .cola-section .cans .can-container:hover .can-text {
-    scale: 1.3;
-  }
-  .pepsi-detail #modal-close:hover {
-    cursor: pointer;
-  }
-}
-@media screen and (max-width: 768px) {
-  .cola-section .head {
-    font-size: 1.2em;
-  }
-  .cola-section .head em {
-    font-size: 1.8em;
-  }
-  .pepsi-detail {
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    min-height: calc(100lvh - 3em);
-    gap: 2em;
-  }
-  .pepsi-detail .can-container #can-image {
-    width: auto;
-    height: 250px;
-  }
-  .pepsi-detail .info {
-    width: 80%;
-    height: 10%;
-  }
-  .pepsi-detail .info p {
-    padding: 0.5em 1.5em;
-    font-size: 0.8em;
-  }
-  .pepsi-detail .info p:nth-child(4) {
-    font-size: 1em;
-  }
-  .pepsi-detail .info #can-title {
-    font-size: 1.2em;
-  }
-  .pepsi-detail #modal-close {
-    top: 8%;
-    right: 6%;
-    font-size: 1.5em;
-  }
-}
-@keyframes slide_in_with_style {
-  0% {
-    transform: translateX(50%) rotate(10deg);
-  }
-  60% {
-    transform: translateX(-10%);
-  }
-  100% {
-    transform: none;
-  }
-}/*# sourceMappingURL=product.css.map */
+.zero-pepsi .can {
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */
