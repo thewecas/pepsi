@@ -1,2 +1,110 @@
 @import "./setup";
 @import "./nav";
+
+* {
+  font-family: $Bubblegum;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.cola-section {
+  .head {
+    font-size: 2em;
+    text-transform: uppercase;
+    display: block;
+    padding: 1em 1em 0em;
+    text-align: center;
+    em {
+      font-size: 2.2em;
+    }
+  }
+  .cans {
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-flow: wrap;
+    padding: 2em;
+    place-items: center;
+    gap: 2em;
+    .can {
+      padding: 2em 4em;
+      text-align: center;
+      .can-img {
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+      }
+      .can-text {
+        margin-top: 2em;
+        line-height: 1.3em;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.the1893 {
+  background: linear-gradient(
+    45deg,
+    rgb(21, 11, 0),
+    rgb(44, 44, 44),
+    rgb(4, 0, 19)
+  );
+  .head {
+    color: #bba071;
+    em {
+      color: #a16d14;
+    }
+  }
+  .can-text {
+    color: #bba071;
+  }
+}
+.theFruits {
+  background: linear-gradient(
+    30deg,
+    rgb(0, 0, 0) 30%,
+    rgb(105, 0, 0) 20%,
+    rgb(196, 47, 47),
+    rgb(105, 0, 0) 70%,
+    rgb(0, 0, 0) 70%
+  );
+  .head {
+    color: rgb(241, 228, 228);
+    em {
+      &:nth-child(2) {
+        color: #decc2c;
+      }
+      &:nth-child(3) {
+        color: #de2c2c;
+      }
+    }
+  }
+  .cans {
+    justify-content: center;
+    .can {
+      padding: 1em 2em;
+      .can-img {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (hover) {
+  .cola-section {
+    .cans {
+      .can {
+        &:hover {
+          .can-img {
+            rotate: 3deg;
+            scale: 1.1;
+            translate: 0px -30px;
+          }
+          .can-text {
+            scale: 1.3;
+          }
+        }
+      }
+    }
+  }
+}
