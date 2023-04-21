@@ -23,9 +23,11 @@ menu_checkbox.addEventListener("click", function () {
 )
 
 
+
+
 // product page
 
-let cans = document.querySelectorAll(".can-container");
+let cans = document.querySelectorAll(".cold-drink-card");
 
 cans.forEach(ele => {
     ele.addEventListener("click", function () {
@@ -34,7 +36,7 @@ cans.forEach(ele => {
     });
 });
 
-let detail_modal = document.querySelector("#pepsi-detail");
+let detail_modal = document.querySelector("#cold-drink-modal");
 
 let detail_title = detail_modal.children[1].children[0];
 let detail_image = detail_modal.children[2].children[0];
@@ -43,20 +45,24 @@ let can_title, can_image;
 
 function openDetailModal(id) {
     let ele = document.querySelector("#" + id);
-    can_title = ele.children[1].innerHTML;
-    can_image_link = ele.children[0].getAttribute("src");
+    let can_title = ele.children[1].innerHTML;
+    let can_image_link = ele.children[0].getAttribute("src");
 
     detail_title.innerText = can_title;
     detail_image.setAttribute("src", can_image_link);
 
-    detail_modal.setAttribute("style", "display:flex;")
+    detail_modal.showModal();
+    detail_modal.setAttribute("style", "display:flex;");
+
 }
 
 
-let modal_close = document.querySelector("#modal-close");
+let modal_close = document.querySelector("#modal-close-btn");
 
 modal_close.addEventListener("click", function () {
-    detail_modal.setAttribute("style", "display:none;")
+    detail_modal.setAttribute("style", "display:none;");
+
+    detail_modal.close();
 
 });
 

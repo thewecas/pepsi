@@ -5,58 +5,71 @@ footer {
     rgb(0, 0, 141),
     rgb(5, 5, 125)
   );
-  color: white;
-  font-family: $Bubblegum;
+  font-family: $poppins;
   letter-spacing: 2px;
   display: flex;
+  flex-flow: wrap;
   align-items: center;
   justify-content: space-evenly;
-  padding: 1em 1em;
+  padding-block: 4em;
   .logo-img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    aspect-ratio: 1/1;
   }
   .footer-link {
     width: 60%;
+    padding-left: 8em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
     text-transform: capitalize;
-    p {
-      margin: 0.3em;
+    a {
+      padding-inline: 1em;
+      font-size: 1.1rem;
     }
   }
-  .footer-extras {
+  .footer-social-media {
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     .btn {
       @include btn();
-      padding: 0.3em 0.6em;
+      font-size: 1rem;
+      padding: 0.5em 1em;
     }
     .icons {
       padding: 1em;
       width: 100%;
       display: flex;
       justify-content: space-evenly;
+      a {
+        i {
+          font-size: 2rem;
+        }
+      }
     }
   }
 }
 
 @media screen and (max-width: 768px) {
   footer {
+    padding-block: 2em;
     flex-direction: column;
     .logo-img {
       order: 2;
       margin: 1em;
     }
     .footer-link {
+      width: 80%;
       order: 1;
       display: flex;
       flex-direction: column;
+      padding: 0;
+      text-align: center;
     }
-    .footer-extras {
+    .footer-social-media {
+      width: 100%;
       order: 3;
     }
   }
@@ -71,7 +84,7 @@ footer {
         }
       }
     }
-    .footer-extras {
+    .footer-social-media {
       .btn,
       .icons {
         cursor: pointer;

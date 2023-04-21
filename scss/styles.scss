@@ -4,23 +4,138 @@
 
 @import "./footer";
 
-body {
-  color: white;
-  font-family: $Bubblegum;
-}
-
-/*zero styling */
-.zero-pepsi {
+/*banner section styling */
+.banner-section {
   min-height: clamp(450px, 50svh, 60svh);
-  //   min-height: ;
-  width: 50%;
   background-color: black;
-  padding: 2em;
-  overflow: hidden;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  .can {
-    width: 100%;
+  flex-direction: row-reverse;
+  width: 100%;
+
+  .image {
+    width: 60%;
+    min-height: 70svh;
+    background: url("../assets/images/zero-sugar.png");
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url("../assets/images/new-improved-taste.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      display: block;
+      width: 15%;
+      aspect-ratio: 1/1;
+      position: absolute;
+      top: 10%;
+      right: 30%;
+      z-index: 1;
+    }
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-style: italic;
+      &:nth-child(1) {
+        font-size: 10rem;
+        line-height: 12rem;
+      }
+      &:nth-child(2) {
+        font-size: 3.4rem;
+        line-height: 1rem;
+      }
+      &:nth-child(3) {
+        font-size: 5.2rem;
+      }
+    }
   }
 }
+
+/*banner section ends */
+
+/*facvorite section styling */
+
+.favorite-section {
+  padding-block: 5em;
+  background: linear-gradient(
+    170deg,
+    #00085b,
+    rgb(4, 4, 218),
+    rgb(1, 1, 80) 60%,
+    black 50%
+  );
+  display: flex;
+  justify-content: space-between;
+  .image {
+    width: 55%;
+    aspect-ratio: 875/445;
+    object-fit: contain;
+  }
+  .text {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 4rem;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 1rem;
+      margin-block: 1em;
+    }
+    .btn {
+      @include btn();
+      width: 200px;
+      margin-block: 1em;
+    }
+  }
+}
+
+/*facvorite section ends */
+
+/*likes section styling */
+
+.likes-section {
+  background: linear-gradient(
+    350deg,
+    #0713a6,
+    rgb(60, 60, 185),
+    rgb(1, 1, 126) 65%,
+    black 65%
+  );
+  padding-top: 4em;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  .image {
+    width: 40%;
+    object-fit: contain;
+  }
+  .text {
+    width: 30%;
+    display: flex;
+    letter-spacing: 5px;
+    justify-content: center;
+    flex-direction: column;
+    span {
+      text-transform: uppercase;
+      display: block;
+      font-weight: 900;
+      line-height: 8rem;
+      font-size: 7rem;
+    }
+  }
+}
+
+/*likes section ends */

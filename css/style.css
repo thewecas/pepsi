@@ -1,29 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap");
-@font-face {
-  font-family: logo;
-  src: url("../assets/fonts/pepsi.ttf");
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
+  color: rgb(230, 230, 230);
 }
 
 body {
   font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  color: rgb(230, 230, 230);
   min-height: 100vh;
   width: 100svw;
+}
+
+.container {
+  padding-inline: 5rem;
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* nav */
-.nav {
+/* navbar */
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,33 +41,46 @@ body {
   width: 100%;
   z-index: 999;
 }
-.nav .header {
+.navbar .header {
   display: flex;
   justify-content: center;
 }
-.nav .header .logo {
-  width: 200px;
-  padding: 0.5em 1em;
+.navbar .header .logo {
+  width: 240px;
+  padding: 0.5em 2em;
 }
-.nav .header .hamburger {
+.navbar .header .logo img {
+  width: 100%;
+}
+.navbar .header .hamburger {
   display: none;
 }
-.nav .nav-links {
+.navbar .nav-links {
   display: flex;
-  padding-right: 1em;
+  flex-wrap: wrap;
+  padding: 1em 2em;
   align-items: baseline;
 }
-.nav .nav-links .nav-item {
+.navbar .nav-links .nav-item {
   display: block;
-  font-size: 1em;
+  font-size: 0.8em;
+  line-height: 1.5rem;
   padding: 0.5em 1em;
-  color: white;
-  font-family: "Bubblegum Sans", cursive;
+  font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
 }
-.nav .nav-links .btn {
+.navbar .nav-links .btn {
   border: 2px solid white;
   border-radius: 1em;
+  padding: 0.5em 1em;
+  color: rgb(230, 230, 230);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+}
+.navbar .nav-links .btn:hover {
+  background-color: white;
+  color: blue;
 }
 
 body {
@@ -70,21 +88,21 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .nav {
+  .navbar {
     height: 3em;
     flex-direction: column;
     transition: all 0.5s ease-in-out;
   }
-  .nav .header {
+  .navbar .header {
     width: 100%;
     height: 3em;
     justify-content: space-between;
     align-items: center;
   }
-  .nav .header .logo {
+  .navbar .header .logo {
     width: 120px;
   }
-  .nav .header .hamburger {
+  .navbar .header .hamburger {
     display: block;
     width: 35px;
     height: 35px;
@@ -92,29 +110,25 @@ body {
     overflow: hidden;
     margin: 0.5em 1.5em;
   }
-  .nav .header .hamburger .menu-checkbox {
+  .navbar .header .hamburger .menu-checkbox {
     opacity: 0;
     z-index: 2;
     width: 30px;
     height: 30px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
-  .nav .header .hamburger .bar {
+  .navbar .header .hamburger .bar {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
   }
-  .nav .header .hamburger .bar hr {
+  .navbar .header .hamburger .bar hr {
     width: 100%;
     height: 4px;
     outline: none;
@@ -122,30 +136,30 @@ body {
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
   }
-  .nav .header .hamburger .menu-checkbox:checked + .bar hr:nth-child(1) {
+  .navbar .header .hamburger .menu-checkbox:checked + .bar hr:nth-child(1) {
     animation: open1 0.5s ease-in-out forwards;
   }
-  .nav .header .hamburger .menu-checkbox:checked + .bar hr:nth-child(2) {
+  .navbar .header .hamburger .menu-checkbox:checked + .bar hr:nth-child(2) {
     animation: open2 0.5s ease-in-out forwards;
   }
-  .nav .header .hamburger .menu-checkbox:checked + .bar hr:nth-child(3) {
+  .navbar .header .hamburger .menu-checkbox:checked + .bar hr:nth-child(3) {
     animation: open3 0.5s ease-in-out forwards;
   }
-  .nav .header .hamburger .menu-checkbox + .bar hr:nth-child(1) {
+  .navbar .header .hamburger .menu-checkbox + .bar hr:nth-child(1) {
     animation: close1 0.5s ease-in-out forwards;
   }
-  .nav .header .hamburger .menu-checkbox + .bar hr:nth-child(2) {
+  .navbar .header .hamburger .menu-checkbox + .bar hr:nth-child(2) {
     animation: close2 0.5s ease-in-out forwards;
   }
-  .nav .header .hamburger .menu-checkbox + .bar hr:nth-child(3) {
+  .navbar .header .hamburger .menu-checkbox + .bar hr:nth-child(3) {
     animation: close3 0.5s ease-in-out forwards;
   }
-  .nav .open_link,
-  .nav .nav-links {
+  .navbar .open_link,
+  .navbar .nav-links {
     display: none;
     opacity: 0;
   }
-  .nav .open_link {
+  .navbar .open_link {
     position: sticky;
     top: 0;
     display: flex;
@@ -159,11 +173,11 @@ body {
     opacity: 1;
     animation: fade_in 5s ease-in-out 2s forwards;
   }
-  .nav:has(.open_link) {
+  .navbar:has(.open_link) {
     height: 100svi;
     background-position: 60% 50%;
   }
-  .nav:has(.open_link) .header {
+  .navbar:has(.open_link) .header {
     padding-top: 2px;
   }
   body {
@@ -238,44 +252,58 @@ body {
 /* nav ends */
 footer {
   background: linear-gradient(45deg, rgb(7, 7, 107), rgb(0, 0, 141), rgb(5, 5, 125));
-  color: white;
-  font-family: "Bubblegum Sans", cursive;
+  font-family: "Poppins", sans-serif;
   letter-spacing: 2px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 1em 1em;
+  padding-block: 4em;
 }
 footer .logo-img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  aspect-ratio: 1/1;
 }
 footer .footer-link {
   width: 60%;
+  padding-inline: 4em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  text-align: center;
   text-transform: capitalize;
 }
-footer .footer-link p {
-  margin: 0.3em;
+footer .footer-link a {
+  padding-inline: 1em;
+  font-size: 1.1rem;
 }
-footer .footer-extras {
+footer .footer-social-media {
+  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-footer .footer-extras .btn {
+footer .footer-social-media .btn {
   border: 2px solid white;
   border-radius: 1em;
-  padding: 0.3em 0.6em;
+  padding: 0.5em 1em;
+  color: rgb(230, 230, 230);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 0.5em 1em;
 }
-footer .footer-extras .icons {
+footer .footer-social-media .btn:hover {
+  background-color: white;
+  color: blue;
+}
+footer .footer-social-media .icons {
   padding: 1em;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+}
+footer .footer-social-media .icons a i {
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -336,7 +364,7 @@ footer .footer-extras .icons {
 .zero-pepsi .text {
   font-size: 3em;
   color: white;
-  font-family: "Bubblegum Sans", cursive;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -365,9 +393,6 @@ footer .footer-extras .icons {
 }
 .three-pepsi .can {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   left: 30%;
   width: 50%;
   filter: drop-shadow(2px 2px 10px rgb(0, 4, 48));
@@ -375,7 +400,7 @@ footer .footer-extras .icons {
 .three-pepsi .text {
   font-size: 3em;
   color: white;
-  font-family: "Bubblegum Sans", cursive;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -396,9 +421,14 @@ footer .footer-extras .icons {
 }
 .three-pepsi .btn {
   color: white;
-  font-family: "Bubblegum Sans", cursive;
+  font-family: "Poppins", sans-serif;
   border: 2px solid white;
   border-radius: 1em;
+  padding: 0.5em 1em;
+  color: rgb(230, 230, 230);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
   padding: 0.4em 0.8em;
   background-color: rgba(0, 0, 255, 0);
   text-align: center;
@@ -406,6 +436,10 @@ footer .footer-extras .icons {
   width: fit-content;
   font-size: 0.4em;
   margin-top: 0.5em;
+}
+.three-pepsi .btn:hover {
+  background-color: white;
+  color: blue;
 }
 .three-pepsi .btn:hover {
   cursor: pointer;
@@ -432,7 +466,7 @@ footer .footer-extras .icons {
 .blue-pepsi .text {
   color: white;
   font-size: 7em;
-  font-family: "Bubblegum Sans", cursive;
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   position: absolute;
   filter: drop-shadow(5px 5px 5px black);

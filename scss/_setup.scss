@@ -1,38 +1,57 @@
-@font-face {
-  font-family: logo;
-  src: url("../assets/fonts/pepsi.ttf");
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap");
-$josefin: "Josefin Sans", sans-serif;
-$Bubblegum: "Bubblegum Sans", cursive;
+$poppins: "Poppins", sans-serif;
 
-@mixin position-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@mixin display($display, $justify, $align) {
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 @mixin btn {
   border: 2px solid white;
   border-radius: 1em;
+  padding: 0.5em 1em;
+  color: rgb(230, 230, 230);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  &:hover {
+    background-color: white;
+    color: blue;
+  }
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
   text-decoration: none;
+  color: rgb(230, 230, 230);
 }
+
 body {
   font-size: 20px;
+  font-family: $poppins;
+  color: rgb(230, 230, 230);
   min-height: 100vh;
   width: 100svw;
 }
 
+.container {
+  padding-inline: 5rem;
+  width: 100%;
+}
+
 ::-webkit-scrollbar {
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding-inline: 1rem;
+  }
 }

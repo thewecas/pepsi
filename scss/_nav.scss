@@ -1,5 +1,5 @@
-/* nav */
-.nav {
+/* navbar */
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,8 +15,11 @@
     display: flex;
     justify-content: center;
     .logo {
-      width: 200px;
-      padding: 0.5em 1em;
+      width: 240px;
+      padding: 0.5em 2em;
+      img {
+        width: 100%;
+      }
     }
     .hamburger {
       display: none;
@@ -24,14 +27,15 @@
   }
   .nav-links {
     display: flex;
-    padding-right: 1em;
+    flex-wrap: wrap;
+    padding: 1em 2em;
     align-items: baseline;
     .nav-item {
       display: block;
-      font-size: 1em;
+      font-size: 0.8em;
+      line-height: 1.5rem;
       padding: 0.5em 1em;
-      color: white;
-      font-family: $Bubblegum;
+      font-family: $poppins;
       letter-spacing: 1px;
     }
     .btn {
@@ -45,9 +49,8 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .nav {
+  .navbar {
     height: 3em;
-
     flex-direction: column;
     transition: all 0.5s ease-in-out;
 
@@ -57,7 +60,7 @@ body {
       justify-content: space-between;
       align-items: center;
       .logo {
-        width: 120px;
+        width: 180px;
       }
       .hamburger {
         display: block;
@@ -71,12 +74,16 @@ body {
           z-index: 2;
           width: 30px;
           height: 30px;
-          @include position-center();
+          position: absolute;
+          top: 50%;
+          left: 50%;
         }
         .bar {
           width: 100%;
           height: 100%;
-          @include position-center();
+          position: absolute;
+          top: 50%;
+          left: 50%;
           transform: translate(-50%, -50%);
           display: flex;
           flex-direction: column;
@@ -138,7 +145,7 @@ body {
       animation: fade_in 5s ease-in-out 2s forwards;
     }
   }
-  .nav:has(.open_link) {
+  .navbar:has(.open_link) {
     height: 100svi;
     .header {
       padding-top: 2px;

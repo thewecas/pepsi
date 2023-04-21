@@ -38,7 +38,7 @@
   .text {
     font-size: 3em;
     color: white;
-    font-family: $Bubblegum;
+    font-family: $poppins;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -81,7 +81,7 @@
   .text {
     font-size: 3em;
     color: white;
-    font-family: $Bubblegum;
+    font-family: $poppins;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -103,7 +103,7 @@
   .btn {
     // position: absolute;
     color: white;
-    font-family: $Bubblegum;
+    font-family: $poppins;
     @include btn();
     padding: 0.4em 0.8em;
     background-color: rgba(0, 0, 255, 0);
@@ -144,7 +144,7 @@
   .text {
     color: white;
     font-size: 7em;
-    font-family: $Bubblegum;
+    font-family: $poppins;
     text-transform: uppercase;
     position: absolute;
     filter: drop-shadow(5px 5px 5px black);
