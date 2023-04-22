@@ -12,13 +12,13 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   padding-block: 4em;
+  flex-basis: 33%;
+  gap: 2em;
   .logo-img {
-    width: 80px;
+    width: 60px;
     aspect-ratio: 1/1;
   }
   .footer-link {
-    width: 60%;
-    padding-left: 8em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-transform: capitalize;
@@ -28,7 +28,6 @@ footer {
     }
   }
   .footer-social-media {
-    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,6 +55,7 @@ footer {
   footer {
     padding-block: 2em;
     flex-direction: column;
+    gap: 0.5em;
     .logo-img {
       order: 2;
       margin: 1em;

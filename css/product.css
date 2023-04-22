@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -41,7 +42,7 @@ body {
   background-position: 40% 50%;
   background-size: 300%;
   background-repeat: no-repeat;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 999;
@@ -88,10 +89,6 @@ body {
   color: blue;
 }
 
-body {
-  margin-top: 4em;
-}
-
 @media screen and (max-width: 768px) {
   .navbar {
     height: 3em;
@@ -105,7 +102,8 @@ body {
     align-items: center;
   }
   .navbar .header .logo {
-    width: 180px;
+    width: 150px;
+    padding: 0.5em 1em;
   }
   .navbar .header .hamburger {
     display: block;
@@ -113,16 +111,17 @@ body {
     height: 35px;
     position: relative;
     overflow: hidden;
-    margin: 0.5em 1.5em;
+    margin: 0.5em 1em;
   }
   .navbar .header .hamburger .menu-checkbox {
     opacity: 0;
     z-index: 2;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
   }
   .navbar .header .hamburger .bar {
     width: 100%;
@@ -177,18 +176,11 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    opacity: 1;
-    animation: fade_in 5s ease-in-out 2s forwards;
+    animation: slide_down 0.6s ease forwards;
   }
   .navbar:has(.open_link) {
     height: 100svi;
     background-position: 60% 50%;
-  }
-  .navbar:has(.open_link) .header {
-    padding-top: 2px;
-  }
-  body {
-    margin-top: 3em;
   }
 }
 /* animation */
@@ -242,9 +234,11 @@ body {
 }
 @keyframes slide_down {
   0% {
+    opacity: 0;
     transform: translateY(-120%);
   }
   100% {
+    opacity: 1;
     transform: none;
   }
 }
@@ -266,14 +260,14 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   padding-block: 4em;
+  flex-basis: 33%;
+  gap: 2em;
 }
 footer .logo-img {
-  width: 80px;
+  width: 60px;
   aspect-ratio: 1/1;
 }
 footer .footer-link {
-  width: 60%;
-  padding-left: 8em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-transform: capitalize;
@@ -283,7 +277,6 @@ footer .footer-link a {
   font-size: 1.1rem;
 }
 footer .footer-social-media {
-  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -318,6 +311,7 @@ footer .footer-social-media .icons a i {
   footer {
     padding-block: 2em;
     flex-direction: column;
+    gap: 0.5em;
   }
   footer .logo-img {
     order: 2;
@@ -372,7 +366,9 @@ footer .footer-social-media .icons a i {
   gap: 2em;
 }
 .cold-drinks-section .coldrink-cards-container .cold-drink-card {
-  border: 2px solid rgb(79, 78, 78);
+  position: relative;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   text-align: center;
   width: 300px;
   height: 400px;
@@ -432,12 +428,16 @@ footer .footer-social-media .icons a i {
 }
 
 .cold-drink-details-modal {
-  position: fixed;
+  position: absolute;
+  position: -webkit-sticky;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 90%;
+  max-width: 1980px;
+  max-height: 1040px;
+  min-height: 90%;
+  overflow-y: scroll;
   border: transparent;
   margin-block: 2em;
   background: linear-gradient(45deg, rgb(1, 1, 82), rgb(23, 38, 157), rgb(2, 2, 96));
@@ -507,6 +507,9 @@ footer .footer-social-media .icons a i {
   .cold-drinks-section .coldrink-cards-container .cold-drink-card:hover {
     cursor: pointer;
   }
+  .cold-drinks-section .coldrink-cards-container .cold-drink-card:hover::before {
+    rotate: 160deg;
+  }
   .cold-drinks-section .coldrink-cards-container .cold-drink-card:hover .cold-drink-image {
     rotate: 3deg;
     scale: 1.1;
@@ -528,10 +531,18 @@ footer .footer-social-media .icons a i {
     font-size: 1.8em;
   }
   .cold-drink-details-modal {
+    padding: 2em 0em;
     flex-direction: column-reverse;
     justify-content: flex-end;
-    min-height: calc(100lvh - 3em);
+    min-height: 100svh;
+    min-width: 100%;
     gap: 2em;
+  }
+  .cold-drink-details-modal #modal-close-btn {
+    transform: translate(-40%, 50%);
+    top: 0;
+    right: 0;
+    font-size: 1.2em;
   }
   .cold-drink-details-modal .cold-drink-image-container #cold-drink-image {
     width: auto;
@@ -541,19 +552,17 @@ footer .footer-social-media .icons a i {
     width: 80%;
   }
   .cold-drink-details-modal .cold-drink-info p {
-    padding: 0.5rem 1.5rem;
-    font-size: 0.8em;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .cold-drink-details-modal .cold-drink-info p:nth-child(1) {
+    font-size: 5rem;
   }
   .cold-drink-details-modal .cold-drink-info p:nth-child(4) {
-    font-size: 1em;
+    font-size: 0.8em;
   }
   .cold-drink-details-modal .cold-drink-info #cold-drink-name {
-    font-size: 1.2em;
-  }
-  .cold-drink-details-modal #modal-close-btn {
-    top: 8%;
-    right: 6%;
-    font-size: 1.5em;
+    font-size: 1em;
   }
 }
 @keyframes slide_in_with_style {

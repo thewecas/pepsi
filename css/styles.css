@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -41,7 +42,7 @@ body {
   background-position: 40% 50%;
   background-size: 300%;
   background-repeat: no-repeat;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 999;
@@ -88,10 +89,6 @@ body {
   color: blue;
 }
 
-body {
-  margin-top: 4em;
-}
-
 @media screen and (max-width: 768px) {
   .navbar {
     height: 3em;
@@ -105,7 +102,8 @@ body {
     align-items: center;
   }
   .navbar .header .logo {
-    width: 180px;
+    width: 150px;
+    padding: 0.5em 1em;
   }
   .navbar .header .hamburger {
     display: block;
@@ -113,16 +111,17 @@ body {
     height: 35px;
     position: relative;
     overflow: hidden;
-    margin: 0.5em 1.5em;
+    margin: 0.5em 1em;
   }
   .navbar .header .hamburger .menu-checkbox {
     opacity: 0;
     z-index: 2;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
   }
   .navbar .header .hamburger .bar {
     width: 100%;
@@ -177,18 +176,11 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    opacity: 1;
-    animation: fade_in 5s ease-in-out 2s forwards;
+    animation: slide_down 0.6s ease forwards;
   }
   .navbar:has(.open_link) {
     height: 100svi;
     background-position: 60% 50%;
-  }
-  .navbar:has(.open_link) .header {
-    padding-top: 2px;
-  }
-  body {
-    margin-top: 3em;
   }
 }
 /* animation */
@@ -242,9 +234,11 @@ body {
 }
 @keyframes slide_down {
   0% {
+    opacity: 0;
     transform: translateY(-120%);
   }
   100% {
+    opacity: 1;
     transform: none;
   }
 }
@@ -266,14 +260,14 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   padding-block: 4em;
+  flex-basis: 33%;
+  gap: 2em;
 }
 footer .logo-img {
-  width: 80px;
+  width: 60px;
   aspect-ratio: 1/1;
 }
 footer .footer-link {
-  width: 60%;
-  padding-left: 8em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-transform: capitalize;
@@ -283,7 +277,6 @@ footer .footer-link a {
   font-size: 1.1rem;
 }
 footer .footer-social-media {
-  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -318,6 +311,7 @@ footer .footer-social-media .icons a i {
   footer {
     padding-block: 2em;
     flex-direction: column;
+    gap: 0.5em;
   }
   footer .logo-img {
     order: 2;
@@ -352,12 +346,14 @@ footer .footer-social-media .icons a i {
   display: flex;
   flex-direction: row-reverse;
   width: 100%;
+  padding: 0;
 }
 .banner-section .image {
-  width: 60%;
+  width: 100%;
   min-height: 70svh;
   background: url("../assets/images/zero-sugar.png");
   background-size: contain;
+  background-size: auto 80vh;
   background-position: bottom;
   background-repeat: no-repeat;
   position: relative;
@@ -380,22 +376,25 @@ footer .footer-social-media .icons a i {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 10%;
 }
 .banner-section .text span {
   text-transform: uppercase;
   font-weight: 700;
   font-style: italic;
+  font-style: normal;
 }
 .banner-section .text span:nth-child(1) {
-  font-size: 10rem;
-  line-height: 12rem;
+  font-size: 10vw;
+  line-height: 10vw;
 }
 .banner-section .text span:nth-child(2) {
-  font-size: 3.4rem;
-  line-height: 1rem;
+  font-size: 3.5vw;
+  line-height: 3.5vw;
 }
 .banner-section .text span:nth-child(3) {
-  font-size: 5.2rem;
+  font-size: 5.5vw;
+  line-height: 5.5vw;
 }
 
 /*banner section ends */
@@ -419,9 +418,9 @@ footer .footer-social-media .icons a i {
   justify-content: center;
 }
 .favorite-section .text span {
-  font-size: 3rem;
+  font-size: 3vw;
+  line-height: 3.4vw;
   font-weight: 700;
-  line-height: 4rem;
   text-transform: uppercase;
 }
 .favorite-section .text p {
@@ -448,7 +447,7 @@ footer .footer-social-media .icons a i {
 /*likes section styling */
 .likes-section {
   background: linear-gradient(350deg, #0713a6, rgb(60, 60, 185), rgb(1, 1, 126) 65%, black 65%);
-  padding-top: 4em;
+  padding-top: 2em;
   display: flex;
   justify-content: space-evenly;
   flex-direction: row-reverse;
@@ -469,8 +468,74 @@ footer .footer-social-media .icons a i {
   text-transform: uppercase;
   display: block;
   font-weight: 900;
-  line-height: 8rem;
-  font-size: 7rem;
+  font-size: 7vw;
+  line-height: 7.5vw;
 }
 
-/*likes section ends *//*# sourceMappingURL=styles.css.map */
+/*likes section ends */
+/* resppnsive styling */
+@media screen and (width < 768px) {
+  .banner-section {
+    flex-direction: column-reverse;
+    padding-top: 2em;
+    padding-inline: 0;
+    min-height: auto;
+  }
+  .banner-section .image {
+    width: 100%;
+    min-height: 50svh;
+    background-size: 120%;
+    background-size: auto 120%;
+  }
+  .banner-section .image::after {
+    width: 8rem;
+    right: 60%;
+    transform: translateX(150%);
+  }
+  .banner-section .text {
+    align-items: center;
+  }
+  .banner-section .text span:nth-child(1) {
+    font-size: 7rem;
+    line-height: 7rem;
+  }
+  .banner-section .text span:nth-child(2) {
+    font-size: 2.45rem;
+    line-height: 2.45rem;
+  }
+  .banner-section .text span:nth-child(3) {
+    font-size: 3.7rem;
+    line-height: 3.7rem;
+  }
+  .favorite-section {
+    padding: 2em;
+    flex-direction: column;
+    gap: 2em;
+  }
+  .favorite-section .image {
+    width: 100%;
+  }
+  .favorite-section .text {
+    width: 100%;
+  }
+  .favorite-section .text span {
+    font-size: 1.5rem;
+    line-height: 1.2em;
+  }
+  .likes-section {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .likes-section .text {
+    width: 100%;
+    align-items: center;
+    padding-block: 1em;
+  }
+  .likes-section .text span {
+    font-size: 4rem;
+    line-height: 1.2em;
+  }
+  .likes-section .image {
+    width: 100%;
+  }
+}/*# sourceMappingURL=styles.css.map */
