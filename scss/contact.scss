@@ -1,0 +1,123 @@
+@import "./setup";
+@import "./nav";
+@import "./footer";
+
+.contact-us-section {
+  background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.486),
+      rgba(32, 0, 139, 0.529)
+    ),
+    url("../assets/images/background-triangle.jpg");
+  //   background-position: 70% 40%;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  .heading {
+    display: grid;
+    place-content: center;
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+    // font-size: 5vw;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #33333387, #9999997e),
+      url("../assets/images/Carbonated_Blue_RGB@2x.jpg");
+    background-position: bottom;
+
+    background-size: cover;
+    height: 10rem;
+  }
+  .contact-us-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 4rem 2rem;
+
+    .contact-form {
+      min-height: 50svh;
+      width: 30rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      h2 {
+        font-weight: 500;
+        // font-size: 3vw;
+        text-transform: uppercase;
+      }
+      input,
+      textarea {
+        height: 3rem;
+        font-family: inherit;
+        font-size: 1rem;
+        padding: 0.5rem;
+        width: 100%;
+        background-color: #c9c9c93e;
+        color: rgb(230, 230, 230);
+        color: rgb(255, 255, 255);
+        font-weight: 400;
+        border: transparent;
+        border-bottom: 2px solid rgb(132, 132, 186);
+        outline: transparent;
+        &::placeholder {
+          color: rgba(230, 230, 230, 0.804);
+        }
+      }
+      textarea {
+        resize: none;
+        height: 8rem;
+      }
+
+      input.btn {
+        @include btn();
+        width: 7rem;
+        font-size: 1rem;
+        height: auto;
+        background-color: transparent;
+      }
+    }
+    .contact-details-container {
+      display: grid;
+      place-content: center;
+      padding: 1rem;
+      gap: 2rem;
+      .contact-detail {
+        display: flex;
+        .contact-icon {
+          font-size: 1.5rem;
+          width: 3rem;
+          padding-block: 0.25em;
+        }
+        .contact-info {
+          backdrop-filter: blur(2px);
+          h3 {
+            font-weight: 500;
+            font-size: 1.2rem;
+          }
+          a {
+            font-weight: 400;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (width<767px) {
+  .contact-us-section {
+    .heading {
+      font-size: 3rem;
+    }
+    .contact-us-container {
+      padding: 1rem;
+      gap: 1rem;
+      .contact-form {
+        input.btn {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}

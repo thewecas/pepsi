@@ -17,6 +17,7 @@ body {
   color: rgb(230, 230, 230);
   min-height: 100vh;
   width: 100svw;
+  overflow-x: hidden;
 }
 
 .container {
@@ -28,7 +29,7 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width < 767px) {
   .container {
     padding-inline: 1rem;
   }
@@ -74,6 +75,7 @@ body {
   padding: 0.5em 1em;
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
+  font-size: 1rem;
 }
 .navbar .nav-links .btn {
   border: 2px solid white;
@@ -89,7 +91,7 @@ body {
   color: blue;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width < 767px) {
   .navbar {
     height: 3em;
     flex-direction: column;
@@ -307,7 +309,7 @@ footer .footer-social-media .icons a i {
   font-size: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width < 767px) {
   footer {
     padding-block: 2em;
     flex-direction: column;
@@ -373,6 +375,17 @@ footer .footer-social-media .icons a i {
   width: 300px;
   height: 400px;
 }
+.cold-drinks-section .coldrink-cards-container .cold-drink-card::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  rotate: 0deg;
+  transition: rotate 0.3s ease-in-out;
+}
 .cold-drinks-section .coldrink-cards-container .cold-drink-card .cold-drink-image {
   height: 300px;
   -o-object-fit: contain;
@@ -398,6 +411,9 @@ footer .footer-social-media .icons a i {
 #the1893 .coldrink-cards-container .cold-drink-card {
   padding-top: 1em;
 }
+#the1893 .coldrink-cards-container .cold-drink-card::before {
+  border: 2px solid rgb(79, 78, 78);
+}
 #the1893 .cold-drink-name {
   color: #bba071;
 }
@@ -419,6 +435,9 @@ footer .footer-social-media .icons a i {
 }
 #theFruits .coldrink-cards-container .cold-drink-card {
   padding: 1em 2em;
+}
+#theFruits .coldrink-cards-container .cold-drink-card::before {
+  border: 2px solid rgb(181, 166, 166);
 }
 #theFruits .coldrink-cards-container .cold-drink-card .cold-drink-image {
   width: auto;
@@ -508,7 +527,7 @@ footer .footer-social-media .icons a i {
     cursor: pointer;
   }
   .cold-drinks-section .coldrink-cards-container .cold-drink-card:hover::before {
-    rotate: 160deg;
+    rotate: -5deg;
   }
   .cold-drinks-section .coldrink-cards-container .cold-drink-card:hover .cold-drink-image {
     rotate: 3deg;
@@ -517,18 +536,21 @@ footer .footer-social-media .icons a i {
     filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.447));
   }
   .cold-drinks-section .coldrink-cards-container .cold-drink-card:hover .cold-drink-name {
-    scale: 1.3;
+    scale: 1.2;
   }
   .cold-drink-details-modal #modal-close-btn:hover {
     cursor: pointer;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (width < 767px) {
   .cold-drinks-section .cold-drink-tagline {
     font-size: 1.2em;
   }
   .cold-drinks-section .cold-drink-tagline em {
-    font-size: 1.8em;
+    font-size: 1.5em;
+  }
+  .cold-drinks-section .coldrink-cards-container {
+    padding-block: 2em;
   }
   .cold-drink-details-modal {
     padding: 2em 0em;

@@ -341,95 +341,69 @@ footer .footer-social-media .icons a i {
     cursor: pointer;
   }
 }
-/*banner section styling */
-.banner-section {
-  min-height: clamp(450px, 50svh, 60svh);
-  background-color: black;
-  display: flex;
-  flex-direction: row-reverse;
-  width: 100%;
-  padding: 0;
+.contact-us-section {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.486), rgba(32, 0, 139, 0.529)), url("../assets/images/background-triangle.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
 }
-.banner-section .image {
-  width: 100%;
-  min-height: 70svh;
-  background: url("../assets/images/zero-sugar.png");
-  background-size: contain;
-  background-size: auto 80vh;
+.contact-us-section .heading {
+  display: grid;
+  place-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 5rem;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, rgba(51, 51, 51, 0.5294117647), rgba(153, 153, 153, 0.4941176471)), url("../assets/images/Carbonated_Blue_RGB@2x.jpg");
   background-position: bottom;
-  background-repeat: no-repeat;
-  position: relative;
+  background-size: cover;
+  height: 10rem;
 }
-.banner-section .image::after {
-  content: "";
-  background-image: url("../assets/images/new-improved-taste.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  display: block;
-  width: 15%;
-  aspect-ratio: 1/1;
-  position: absolute;
-  top: 10%;
-  right: 30%;
-  z-index: 1;
+.contact-us-section .contact-us-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 4rem 2rem;
 }
-.banner-section .text {
+.contact-us-section .contact-us-container .contact-form {
+  min-height: 50svh;
+  width: 30rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 10%;
+  gap: 1rem;
 }
-.banner-section .text span {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-style: italic;
-  font-style: normal;
-}
-.banner-section .text span:nth-child(1) {
-  font-size: 10vw;
-  line-height: 10vw;
-}
-.banner-section .text span:nth-child(2) {
-  font-size: 3.5vw;
-  line-height: 3.5vw;
-}
-.banner-section .text span:nth-child(3) {
-  font-size: 5.5vw;
-  line-height: 5.5vw;
-}
-
-/*banner section ends */
-/*facvorite section styling */
-.favorite-section {
-  padding-block: 5em;
-  background: linear-gradient(170deg, #00085b, rgb(4, 4, 218), rgb(1, 1, 80) 60%, black 50%);
-  display: flex;
-  justify-content: space-between;
-}
-.favorite-section .image {
-  width: 55%;
-  aspect-ratio: 875/445;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.favorite-section .text {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.favorite-section .text span {
-  font-size: 3vw;
-  line-height: 3.4vw;
-  font-weight: 700;
+.contact-us-section .contact-us-container .contact-form h2 {
+  font-weight: 500;
   text-transform: uppercase;
 }
-.favorite-section .text p {
+.contact-us-section .contact-us-container .contact-form input,
+.contact-us-section .contact-us-container .contact-form textarea {
+  height: 3rem;
+  font-family: inherit;
   font-size: 1rem;
-  margin-block: 1em;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: rgba(201, 201, 201, 0.2431372549);
+  color: rgb(230, 230, 230);
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  border: transparent;
+  border-bottom: 2px solid rgb(132, 132, 186);
+  outline: transparent;
 }
-.favorite-section .text .btn {
+.contact-us-section .contact-us-container .contact-form input::-moz-placeholder, .contact-us-section .contact-us-container .contact-form textarea::-moz-placeholder {
+  color: rgba(230, 230, 230, 0.804);
+}
+.contact-us-section .contact-us-container .contact-form input::placeholder,
+.contact-us-section .contact-us-container .contact-form textarea::placeholder {
+  color: rgba(230, 230, 230, 0.804);
+}
+.contact-us-section .contact-us-container .contact-form textarea {
+  resize: none;
+  height: 8rem;
+}
+.contact-us-section .contact-us-container .contact-form input.btn {
   border: 2px solid white;
   border-radius: 1em;
   padding: 0.5em 1em;
@@ -437,108 +411,51 @@ footer .footer-social-media .icons a i {
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
-  width: 200px;
-  margin-block: 1em;
+  width: 7rem;
+  font-size: 1rem;
+  height: auto;
+  background-color: transparent;
 }
-.favorite-section .text .btn:hover {
+.contact-us-section .contact-us-container .contact-form input.btn:hover {
   background-color: white;
   color: blue;
 }
-
-/*facvorite section ends */
-/*likes section styling */
-.likes-section {
-  background: linear-gradient(350deg, #0713a6, rgb(60, 60, 185), rgb(1, 1, 126) 65%, black 65%);
-  padding-top: 2em;
+.contact-us-section .contact-us-container .contact-details-container {
+  display: grid;
+  place-content: center;
+  padding: 1rem;
+  gap: 2rem;
+}
+.contact-us-section .contact-us-container .contact-details-container .contact-detail {
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: row-reverse;
 }
-.likes-section .image {
-  width: 40%;
-  -o-object-fit: contain;
-     object-fit: contain;
+.contact-us-section .contact-us-container .contact-details-container .contact-detail .contact-icon {
+  font-size: 1.5rem;
+  width: 3rem;
+  padding-block: 0.25em;
 }
-.likes-section .text {
-  width: 40%;
-  display: flex;
-  letter-spacing: 5px;
-  justify-content: center;
-  flex-direction: column;
+.contact-us-section .contact-us-container .contact-details-container .contact-detail .contact-info {
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
-.likes-section .text span {
-  text-transform: uppercase;
-  display: block;
-  font-weight: 900;
-  font-size: 7vw;
-  line-height: 7.5vw;
+.contact-us-section .contact-us-container .contact-details-container .contact-detail .contact-info h3 {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.contact-us-section .contact-us-container .contact-details-container .contact-detail .contact-info a {
+  font-weight: 400;
+  font-size: 1rem;
 }
 
-/*likes section ends */
-/* resppnsive styling */
 @media screen and (width < 767px) {
-  .banner-section {
-    flex-direction: column-reverse;
-    padding-top: 2em;
-    padding-inline: 0;
-    min-height: auto;
+  .contact-us-section .heading {
+    font-size: 3rem;
   }
-  .banner-section .image {
-    width: 100%;
-    min-height: 50svh;
-    background-size: 120%;
-    background-size: auto 120%;
+  .contact-us-section .contact-us-container {
+    padding: 1rem;
+    gap: 1rem;
   }
-  .banner-section .image::after {
-    width: 8rem;
-    right: 60%;
-    transform: translateX(150%);
+  .contact-us-section .contact-us-container .contact-form input.btn {
+    margin-left: auto;
   }
-  .banner-section .text {
-    align-items: center;
-    margin: 0;
-  }
-  .banner-section .text span:nth-child(1) {
-    font-size: 7rem;
-    line-height: 7rem;
-  }
-  .banner-section .text span:nth-child(2) {
-    font-size: 2.45rem;
-    line-height: 2.45rem;
-  }
-  .banner-section .text span:nth-child(3) {
-    font-size: 3.7rem;
-    line-height: 3.7rem;
-  }
-  .favorite-section {
-    padding: 2em;
-    flex-direction: column;
-    gap: 2em;
-  }
-  .favorite-section .image {
-    width: 100%;
-  }
-  .favorite-section .text {
-    width: 100%;
-  }
-  .favorite-section .text span {
-    font-size: 1.5rem;
-    line-height: 1.2em;
-  }
-  .likes-section {
-    flex-direction: column-reverse;
-    padding: 0;
-  }
-  .likes-section .text {
-    width: 100%;
-    align-items: center;
-    padding-block: 1em;
-  }
-  .likes-section .text span {
-    font-size: 4rem;
-    line-height: 1.2em;
-  }
-  .likes-section .image {
-    width: 100%;
-  }
-}/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=contact.css.map */

@@ -1,0 +1,170 @@
+@import "./setup";
+@import "./nav";
+@import "./footer";
+
+.soda-shop-section {
+  background-image: url("../assets/images/soda shop desktop.jpg");
+  background-repeat: no-repeat;
+
+  width: 100%;
+  background-size: cover;
+  aspect-ratio: 3840/1350;
+  display: flex;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  .soda-can-container1 {
+    background: url("../assets/images/CreamSodaCan@3x.png");
+    height: 83%;
+    left: 50%;
+    transform: translateX(-92%);
+  }
+  .soda-can-container2 {
+    background-image: url("../assets/images/BlackCherryCan@3x.png");
+    height: 100%;
+    right: 50%;
+    transform: translateX(150%);
+  }
+  .soda-can-container {
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: 0px;
+    z-index: 2;
+  }
+  .soda-shop-supplies-stamp {
+    width: 10vw;
+    height: 10vw;
+    // background-color: red;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translate(-50%, 30%);
+    left: 50%;
+    img {
+      width: 100%;
+    }
+  }
+  .tagline {
+    color: rgb(18, 18, 164);
+    font-size: 1.8vw;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.nitro-pepsi-section {
+  background: url("../assets/images/background.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 1900/668;
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  //   flex-basis: 50%;
+  padding: 4rem;
+  .image {
+    background: url("../assets/images/nitropepsi.png");
+    aspect-ratio: 564/794;
+    width: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  .text {
+    display: grid;
+    gap: 2rem;
+    .logo-text-image {
+      background: url("../assets/images/Nitro_Logo@3x.png");
+      aspect-ratio: 720/462;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    p {
+      font-weight: 600;
+      font-size: 2vw;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media screen and (width<767px) {
+  .soda-shop-section {
+    background-image: url("../assets/images/soda shop.jpg");
+    background-size: 100% auto;
+    width: 100%;
+    position: relative;
+    .soda-shop-floor {
+      background: url("../assets/images/soda shop floor-mobile-refresh.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: block;
+      width: 100%;
+      margin-top: 250px;
+      aspect-ratio: 788/1054;
+    }
+    .soda-can-container1 {
+      //   height: 50%;
+      width: 100%;
+      left: -25%;
+      bottom: 10%;
+      transform: none;
+      background-size: 60% auto;
+    }
+    .soda-can-container2 {
+      //   height: 50%;
+      width: 100%;
+      right: -25%;
+      bottom: 0%;
+      transform: none;
+      background-size: 70% auto;
+    }
+    .soda-can-container {
+      background-position: bottom;
+      z-index: 2;
+    }
+    .soda-shop-supplies-stamp {
+      width: 6rem;
+      height: 6rem;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .tagline {
+      font-size: 1rem;
+      position: absolute;
+      top: 220px;
+    }
+  }
+
+  .nitro-pepsi-section {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    gap: 2rem;
+    background-size: cover;
+    .image {
+      width: 80%;
+    }
+    .text {
+      width: 100%;
+      .logo-text-image {
+        width: 100%;
+      }
+      p {
+        text-align: center;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (width>=768px) and (width<1024px) {
+}
