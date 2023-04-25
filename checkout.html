@@ -8,15 +8,14 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/7ec0ac021b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/whatsNew.css">
+    <link rel="stylesheet" href="./css/checkout.css">
     <script src="./js/app.js" defer></script>
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
 
-    <title>Pepsi Co. | What's New</title>
+    <title>Pepsi | Checkout</title>
 </head>
 
-<body>
-
+<body onload="getColdDrinkDetail()">
 
     <!-- navbar begins -->
 
@@ -42,30 +41,35 @@
     </nav>
     <!-- navbar ends -->
 
+    <!-- checkout section -->
 
-    <!-- soda shop section -->
-    <section class="soda-shop-section">
-        <div class="soda-can-container soda-can-container1"></div>
-        <div class="soda-can-container soda-can-container2"></div>
-        <div class="soda-shop-supplies-stamp">
-            <img src="./assets/images/while_supplies_last@3x.png" alt="">
+    <section class="container checkout-section">
+        <div class="cold-drink-info">
+            <p id="cold-drink-name">Original Cola</p>
+            <p>Serving Size 12 fl oz (355mL)</p>
+            <p>Serving Per Conatiner 1</p>
+            <p class="nutrition-facts">Nutrition Facts</p>
+            <p>Calories : 150</p>
+            <p>sodium : 30mg</p>
+            <p>Total Carbohydrate : 40g</p>
+            <p>Sugars : 40g</p>
+            <p>Protrin : 0g</p>
+            <p>Total Fat : 0g</p>
         </div>
-        <p class="tagline">Modern Take on a classic soda</p>
-        <div class="soda-shop-floor"></div>
+        <div class="image-container"><img alt="" id="cold-drink-image" src="./assets/images/can-mango.png">
+            <div class="checkout-container">
+                <p>Quantities</p>
+                <div class="quantity-container">
+                    <button onclick="setQuantity(this.id)" id="desc">-</button>
+                    <input type="number" id="cold-drink-quantity" value=1 min="1">
+                    <button onclick="setQuantity(this.id)" id="inc">+</button>
+                </div>
+                <button class="btn">Buy</button>
+            </div>
+        </div>
 
     </section>
-    <!-- soda shop section ends -->
-
-    <!-- nitro section -->
-    <section class="nitro-pepsi-section">
-        <div class="image"></div>
-        <div class="text">
-            <div class="logo-text-image"></div>
-            <p>Smooth, cream, delicious</p>
-        </div>
-
-    </section>
-    <!-- nitro section ends -->
+    <!-- checkout section ends-->
 
 
 
@@ -94,6 +98,9 @@
         </div>
     </footer>
     <!-- footer ends  -->
+
+
+
 </body>
 
 </html>

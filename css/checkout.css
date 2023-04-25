@@ -342,69 +342,71 @@ footer .footer-social-media .icons a i {
     cursor: pointer;
   }
 }
-.contact-us-section {
-  background: linear-gradient(45deg, rgba(0, 0, 0, 0.486), rgba(32, 0, 139, 0.529)), url("../assets/images/background-triangle.jpg");
+.checkout-section {
+  background-color: rgb(240, 240, 240);
   background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-}
-.contact-us-section .heading {
-  display: grid;
-  place-content: center;
-  color: rgb(255, 255, 255);
-  font-size: 5rem;
-  text-transform: uppercase;
-  background: linear-gradient(45deg, rgba(51, 51, 51, 0.5294117647), rgba(153, 153, 153, 0.4941176471)), url("../assets/images/Carbonated_Blue_RGB@2x.jpg");
-  background-position: bottom;
-  background-size: cover;
-  height: 10rem;
-}
-.contact-us-section .contact-us-container {
+  background-position: center;
+  padding: 2rem;
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  padding: 4rem 2rem;
+  justify-content: center;
+  gap: 10rem;
 }
-.contact-us-section .contact-us-container .contact-form {
-  min-height: 50svh;
-  width: 30rem;
-  padding: 1rem;
+.checkout-section .image-container {
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  text-align: center;
+}
+.checkout-section .image-container img {
+  width: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.checkout-section .cold-drink-info {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  color: rgb(22, 22, 86);
+}
+.checkout-section .cold-drink-info p {
+  padding: 0.25rem 0.5rem;
+}
+.checkout-section .cold-drink-info p:nth-child(1) {
+  border-bottom: 2px solid rgb(205, 203, 203);
+  font-weight: 700;
+}
+.checkout-section .cold-drink-info p:nth-child(2) {
+  padding-top: 1rem;
+}
+.checkout-section .cold-drink-info p:nth-child(4) {
+  border-bottom: 2px solid rgb(205, 203, 203);
+  text-underline-offset: 10px;
+  font-size: 1.2em;
+  padding-top: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.checkout-section .cold-drink-info #cold-drink-name {
+  font-size: 2rem;
+}
+.checkout-section .checkout-container {
+  border-top: 2px solid gray;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   gap: 1rem;
+  color: rgb(22, 22, 86);
+  margin-block: 1rem;
+  padding-block: 1rem;
 }
-.contact-us-section .contact-us-container .contact-form h2 {
+.checkout-section .checkout-container p {
   font-weight: 500;
-  text-transform: uppercase;
 }
-.contact-us-section .contact-us-container .contact-form input,
-.contact-us-section .contact-us-container .contact-form textarea {
-  height: 3rem;
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 0.5rem;
-  width: 100%;
-  background-color: rgba(201, 201, 201, 0.2431372549);
-  color: rgb(230, 230, 230);
-  color: rgb(255, 255, 255);
-  font-weight: 400;
-  border: transparent;
-  border-bottom: 2px solid rgb(132, 132, 186);
-  outline: transparent;
+.checkout-section .checkout-container .quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
 }
-.contact-us-section .contact-us-container .contact-form input::-moz-placeholder, .contact-us-section .contact-us-container .contact-form textarea::-moz-placeholder {
-  color: rgba(230, 230, 230, 0.804);
-}
-.contact-us-section .contact-us-container .contact-form input::placeholder,
-.contact-us-section .contact-us-container .contact-form textarea::placeholder {
-  color: rgba(230, 230, 230, 0.804);
-}
-.contact-us-section .contact-us-container .contact-form textarea {
-  resize: none;
-  height: 8rem;
-}
-.contact-us-section .contact-us-container .contact-form input.btn {
+.checkout-section .checkout-container .quantity-container button {
   border: 2px solid white;
   border-radius: 1em;
   padding: 0.5em 1em;
@@ -412,55 +414,64 @@ footer .footer-social-media .icons a i {
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
-  width: 7rem;
-  font-size: 1rem;
-  height: auto;
-  background-color: transparent;
+  color: black;
+  font-size: 1.2rem;
+  border-radius: 70px;
+  aspect-ratio: 1/1;
+  background-color: rgb(205, 205, 205);
 }
-.contact-us-section .contact-us-container .contact-form input.btn:hover {
+.checkout-section .checkout-container .quantity-container button:hover {
   background-color: white;
   color: blue;
 }
-.contact-us-section .contact-us-container .contact-details-container {
-  display: grid;
-  place-content: center;
-  padding: 0rem 1rem;
-  gap: 2rem;
+.checkout-section .checkout-container .quantity-container button:hover {
+  border: 2px solid blue;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
 }
-.contact-us-section .contact-us-container .contact-details-container .contact-detail {
-  display: flex;
-}
-.contact-us-section .contact-us-container .contact-details-container .contact-detail .contact-icon {
-  font-size: 1.5rem;
-  width: 3rem;
-  padding-block: 0.25em;
-}
-.contact-us-section .contact-us-container .contact-details-container .contact-detail .contact-info {
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
-}
-.contact-us-section .contact-us-container .contact-details-container .contact-detail .contact-info h3 {
-  font-weight: 500;
-  font-size: 1.2rem;
-}
-.contact-us-section .contact-us-container .contact-details-container .contact-detail .contact-info a {
-  font-weight: 400;
+.checkout-section .checkout-container .quantity-container input {
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  outline: transparent;
+  text-align: center;
   font-size: 1rem;
+}
+.checkout-section .checkout-container .btn {
+  border: 2px solid white;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  color: rgb(230, 230, 230);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  color: black;
+  font-size: 1.2rem;
+  border-radius: 70px;
+  width: 250px;
+  background-color: rgb(205, 205, 205);
+}
+.checkout-section .checkout-container .btn:hover {
+  background-color: white;
+  color: blue;
+}
+.checkout-section .checkout-container .btn:hover {
+  border: 2px solid blue;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
 }
 
 @media screen and (width < 767px) {
-  .contact-us-section .heading {
-    font-size: 3rem;
-  }
-  .contact-us-section .contact-us-container {
-    padding: 1rem;
+  .checkout-section {
+    flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
   }
-  .contact-us-section .contact-us-container .contact-form {
-    min-height: auto;
-    padding: 0rem 1rem;
+  .checkout-section .image-container img {
+    height: 250px;
   }
-  .contact-us-section .contact-us-container .contact-form input.btn {
-    margin-left: auto;
+  .checkout-section .image-container .checkout-container .quantity-container input {
+    width: 50%;
   }
-}/*# sourceMappingURL=contact.css.map */
+}/*# sourceMappingURL=checkout.css.map */

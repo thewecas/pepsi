@@ -18,6 +18,7 @@ body {
   min-height: 100vh;
   width: 100svw;
   overflow-x: hidden;
+  position: relative;
 }
 
 .container {
@@ -53,8 +54,8 @@ body {
   justify-content: center;
 }
 .navbar .header .logo {
-  width: 240px;
-  padding: 0.5em 2em;
+  width: 200px;
+  padding: 0.5em 1em;
 }
 .navbar .header .logo img {
   width: 100%;
@@ -65,7 +66,7 @@ body {
 .navbar .nav-links {
   display: flex;
   flex-wrap: wrap;
-  padding: 1em 2em;
+  padding: 1em 1em;
   align-items: baseline;
 }
 .navbar .nav-links .nav-item {
@@ -182,7 +183,7 @@ body {
   }
   .navbar:has(.open_link) {
     height: 100svi;
-    background-position: 60% 50%;
+    background-position: 0% 0%;
   }
 }
 /* animation */
@@ -275,7 +276,7 @@ footer .footer-link {
   text-transform: capitalize;
 }
 footer .footer-link a {
-  padding-inline: 1em;
+  padding: 0.25em 1em;
   font-size: 1.1rem;
 }
 footer .footer-social-media {
@@ -300,7 +301,7 @@ footer .footer-social-media .btn:hover {
   color: blue;
 }
 footer .footer-social-media .icons {
-  padding: 1em;
+  padding-block: 1em;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -349,9 +350,10 @@ footer .footer-social-media .icons a i {
   flex-direction: row-reverse;
   width: 100%;
   padding: 0;
+  position: relative;
 }
 .banner-section .image {
-  width: 100%;
+  min-width: 80%;
   min-height: 70svh;
   background: url("../assets/images/zero-sugar.png");
   background-size: contain;
@@ -359,6 +361,7 @@ footer .footer-social-media .icons a i {
   background-position: bottom;
   background-repeat: no-repeat;
   position: relative;
+  transform: translateX(50px);
 }
 .banner-section .image::after {
   content: "";
@@ -375,6 +378,9 @@ footer .footer-social-media .icons a i {
   z-index: 1;
 }
 .banner-section .text {
+  position: absolute;
+  top: 30%;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -488,6 +494,7 @@ footer .footer-social-media .icons a i {
     min-height: 50svh;
     background-size: 120%;
     background-size: auto 120%;
+    transform: none;
   }
   .banner-section .image::after {
     width: 8rem;
@@ -495,6 +502,8 @@ footer .footer-social-media .icons a i {
     transform: translateX(150%);
   }
   .banner-section .text {
+    position: static;
+    transform: none;
     align-items: center;
     margin: 0;
   }

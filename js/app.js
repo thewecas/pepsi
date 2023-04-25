@@ -1,13 +1,7 @@
-// AOS.init(
-//     {
-//     disable: function () {
-//         var maxwidth = 768;
-//         return window.innerWidth < maxwidth;
-//     }
-//     }
-// );
-
 AOS.init();
+
+//index.html
+
 let nav_links = document.querySelector("#nav-links");
 let menu_checkbox = document.querySelector("#menu-checkbox");
 
@@ -25,59 +19,35 @@ menu_checkbox.addEventListener("click", function () {
 
 
 
-// product page
+// product.html to checkout.html
 
-let cans = document.querySelectorAll(".cold-drink-card");
-
-cans.forEach(ele => {
-    ele.addEventListener("click", function () {
-
-        openDetailModal(ele.id);
-
-    });
-});
-
-let detail_modal = document.querySelector("#cold-drink-modal");
-
-let detail_title = detail_modal.children[1].children[0];
-let detail_image = detail_modal.children[2].children[0];
-
-let can_title, can_image;
-
-// sticking the dialog to stay on the top
-
-let scrollTop;
-let timer;
-
-function openDetailModal(id) {
-    timer = setInterval(setTop, 0.5);
-    let ele = document.querySelector("#" + id);
-    let can_title = ele.children[1].innerHTML;
-    let can_image_link = ele.children[0].getAttribute("src");
-
-    detail_title.innerText = can_title;
-    detail_image.setAttribute("src", can_image_link);
-
-    detail_modal.showModal();
-
-}
-
-function setTop() {
-    scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    console.log(scrollTop);
-    detail_modal.setAttribute("style", "display:flex;top:calc(" + scrollTop + "px + calc(50% + 1rem))");
-    clearInterval(timer)
-
+function setColdDrinkDetails(id) {
+    let ele = document.getElementById(id);
+    let drink_name = ele.children[1].innerHTML;
+    let drink_src = ele.children[0].getAttribute("src");
+    localStorage.setItem("drink_name", drink_name);
+    localStorage.setItem("drink_src", drink_src);
+    console.log(pepsi);
 }
 
 
-let modal_close = document.querySelector("#modal-close-btn");
+function getColdDrinkDetail() {
+    let drink_name = localStorage.getItem("drink_name");
+    let drink_src = localStorage.getItem("drink_src");
+    console.log(drink_name);
+    document.getElementById("cold-drink-name").innerText = drink_name;
+    document.getElementById("cold-drink-image").setAttribute("src", drink_src);
+}
 
-modal_close.addEventListener("click", function () {
-    detail_modal.setAttribute("style", "display:none;");
-    detail_modal.close();
-    // detail_modal.setAttribute("style", "display:none");
 
-});
+//checkout.html
+let quantity = document.getElementById("cold-drink-quantity");
+function setQuantity(id) {
+    if (id == "desc") {
+        quantity.value = parseInt(quantity.value) == 1 ? 1 : parseInt(quantity.value) - 1;
+    }
+    else {
+        quantity.value = parseInt(quantity.value) + 1;
+    }
 
-
+}

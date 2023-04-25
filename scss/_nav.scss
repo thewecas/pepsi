@@ -15,8 +15,8 @@
     display: flex;
     justify-content: center;
     .logo {
-      width: 240px;
-      padding: 0.5em 2em;
+      width: 200px;
+      padding: 0.5em 1em;
       img {
         width: 100%;
       }
@@ -28,7 +28,7 @@
   .nav-links {
     display: flex;
     flex-wrap: wrap;
-    padding: 1em 2em;
+    padding: 1em 1em;
     align-items: baseline;
     .nav-item {
       display: block;
@@ -60,7 +60,6 @@
       .logo {
         width: 150px;
         padding: 0.5em 1em;
-        // padding: 0;
       }
       .hamburger {
         display: block;
@@ -142,16 +141,13 @@
       justify-content: center;
       align-items: center;
       z-index: 2;
-      // opacity: 1;
-
       animation: slide_down 0.6s ease forwards;
-      // animation-delay: 2s;
     }
   }
   .navbar:has(.open_link) {
     height: 100svi;
 
-    background-position: 60% 50%;
+    background-position: 0% 0%;
   }
 }
 

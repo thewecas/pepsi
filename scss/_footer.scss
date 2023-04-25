@@ -14,6 +14,7 @@ footer {
   padding-block: 4em;
   flex-basis: 33%;
   gap: 2em;
+
   .logo-img {
     width: 60px;
     aspect-ratio: 1/1;
@@ -23,7 +24,7 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     text-transform: capitalize;
     a {
-      padding-inline: 1em;
+      padding: 0.25em 1em;
       font-size: 1.1rem;
     }
   }
@@ -38,7 +39,7 @@ footer {
       padding: 0.5em 1em;
     }
     .icons {
-      padding: 1em;
+      padding-block: 1em;
       width: 100%;
       display: flex;
       justify-content: space-evenly;

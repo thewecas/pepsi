@@ -38,7 +38,6 @@
   .soda-shop-supplies-stamp {
     width: 10vw;
     height: 10vw;
-    // background-color: red;
     position: absolute;
     z-index: 2;
     top: 50%;
@@ -67,7 +66,6 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  //   flex-basis: 50%;
   padding: 4rem;
   .image {
     background: url("../assets/images/nitropepsi.png");
@@ -112,7 +110,6 @@
       aspect-ratio: 788/1054;
     }
     .soda-can-container1 {
-      //   height: 50%;
       width: 100%;
       left: -25%;
       bottom: 10%;
@@ -120,7 +117,6 @@
       background-size: 60% auto;
     }
     .soda-can-container2 {
-      //   height: 50%;
       width: 100%;
       right: -25%;
       bottom: 0%;
@@ -164,7 +160,4 @@
       }
     }
   }
-}
-
-@media screen and (width>=768px) and (width<1024px) {
 }

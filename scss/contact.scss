@@ -9,7 +9,6 @@
       rgba(32, 0, 139, 0.529)
     ),
     url("../assets/images/background-triangle.jpg");
-  //   background-position: 70% 40%;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
@@ -18,7 +17,6 @@
     place-content: center;
     color: rgb(255, 255, 255);
     font-size: 5rem;
-    // font-size: 5vw;
     text-transform: uppercase;
     background: linear-gradient(45deg, #33333387, #9999997e),
       url("../assets/images/Carbonated_Blue_RGB@2x.jpg");
@@ -43,7 +41,6 @@
       gap: 1rem;
       h2 {
         font-weight: 500;
-        // font-size: 3vw;
         text-transform: uppercase;
       }
       input,
@@ -80,7 +77,7 @@
     .contact-details-container {
       display: grid;
       place-content: center;
-      padding: 1rem;
+      padding: 0rem 1rem;
       gap: 2rem;
       .contact-detail {
         display: flex;
@@ -117,6 +114,8 @@
         input.btn {
           margin-left: auto;
         }
+        min-height: auto;
+        padding: 0rem 1rem;
       }
     }
   }
